@@ -48,3 +48,14 @@ acb6a7505d3a   busybox       "echo Nick Mullen Tr…"   About a minute ago   Exi
 
 ```
 
+# AKO JE CONTAINER EXITED ILI STOPPED TO NE ZNACI DA GA NE MOGU KORISTITI
+
+JA CU GORNJI CONTAINER PONOVO UZ POMOC NJEGOVOG ID-JA
+
+- `docker start -a acb6a7505d3a`
+
+I PONOVO IMAM OVAJ OUTPUT
+
+```c
+Nick Mullen Train
+```
