@@ -1,0 +1,13 @@
+{
+  "name": "intro-to-docker",
+  "version": "1.0.0",
+  "description": "learning docker",
+  "main": "index.js",
+  "repository": "git@github.com:Rade58/exploring_docker.git",
+  "author": "Rade58 <bajic.rade2@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "gi": "git add -A && git commit -am '👾' && git push",
+    "g2": "git add -A && git commit -am '👾'"
+  }
+}
