@@ -171,3 +171,7 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+# DAKLE SVAKI PUT KADA POKUSAS DA KORISTIS NEKI PUBLI IMAGE, KAO STO JE `hello-world`, ILI `redis` ILI `busybox` I SLICNE, DESICE SE DOWNLOAD
+
+ALI U BUDUCNOSTI NECE, JER CE SE SVE UZIMATI IZ IMAGE CACHE-A
