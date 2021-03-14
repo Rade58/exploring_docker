@@ -1,71 +1,57 @@
-# REMOVING STOPPED CONTAINERS
+# STOPPING CONTAINERS
 
-HAJDE DA PRVO LIST-UJEM SVE CONTAINER-E KOJE SAM KREIRAO
+PRVO CU KREIRATI CONTAINER, A ZA STARTUP COMMAND DEFINISACU MU OVERRIDE, A TO CE BITI ping KOMANDA
 
-- `docker ps --all`
+- `docker create busybox ping google.com`
 
 ```c
-CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS     NAMES
-acb6a7505d3a   busybox       "echo Nick Mullen Tr…"   18 minutes ago      Exited (0) 13 minutes ago                frosty_ritchie
-26e8adb65a62   hello-world   "/hello"                 29 minutes ago      Exited (0) 28 minutes ago                bold_heisenberg
-61dac67304c4   hello-world   "/hello"                 About an hour ago   Exited (0) About an hour ago             crazy_sutherland
-72d15353d0a6   busybox       "ping google.com"        2 hours ago         Exited (0) 2 hours ago                   compassionate_morse
-31b009c65afd   hello-world   "ls"                     3 hours ago         Created                                  sad_chaplygin
-c5aeb7dc3b7b   busybox       "ls -a"                  3 hours ago         Exited (0) 3 hours ago                   affectionate_agnesi
-f4a105a678b2   busybox       "ls"                     3 hours ago         Exited (0) 3 hours ago                   agitated_booth
-d1e2fe056f43   busybox       "echo hello stavros"     3 hours ago         Exited (0) 3 hours ago                   silly_feistel
-1475977c34ac   hello-world   "/hello"                 5 hours ago         Exited (0) 5 hours ago                   great_mcclintock
-6b60b3a31658   hello-world   "/hello"                 6 hours ago         Exited (0) 6 hours ago                   strange_ptolemy
-a0659de1f823   hello-world   "/hello"                 6 hours ago         Exited (0) 6 hours ago                   cool_edison
-1c21b6420d69   hello-world   "/hello"                 7 hours ago         Exited (0) 7 hours ago                   affectionate_meninsky
+d20e43354e6190126a1a62cb5705af57c0380b704273d37dd43a5cf55c6dacd7
 
 ```
 
-# UKLANJANJE SVIH CONTAINER-A
+KADA START-UJEM CONTAINER, POMENUTA KOMANDA BI TREBALA DA GA DRZI U RUNNING STATE-U
 
-- `docker system prune`
+- `docker start -a d20e43354e6190126a1a62cb5705af57c0380b704273d37dd43a5cf55c6dacd7` (MOES I BEZ -a (CAK JE JOS I BOLJE TAKO JER NECES IMATI BINGOV OUTPUT U TERMINALU VEC CES IMATI SAMO OUTPUTED CONTAINER ID))
+
+DAKLE IPAK CU OVAKO
+
+- `docker start -a d20e43354e6190126a1a62cb5705af57c0380b704273d37dd43a5cf55c6dacd7`
+
+NAKON TOGA CU OTVORITI DRUGI TERMINAL, I LIST-OVACU RUNNING CONTAINERS (MOZDA NEPOTREBNO JER ZNAM DA IMAM WORKING CONTAINER; ALI ZELIM DA GA VIDIM NA LISTI ONIH KOJE RUNN-UJU)
+
+- `docker ps`
 
 ```c
-WARNING! This will remove:
-  - all stopped containers
-  - all networks not used by at least one container
-  - all dangling images
-  - all dangling build cache
-
-Are you sure you want to continue? [y/N] y
-Deleted Containers:
-acb6a7505d3ab7e4e20261cfc229fc3009d2a014fd31e1425a069f33fbb0e976
-26e8adb65a620bf2e9e5fd2e4e549b4386bcec48991be06d8e60484a10d22475
-61dac67304c4476128eb76b6f95b4a1fd9b5c213888205fd19edcbc8db02e322
-72d15353d0a65a621ffd88913a040195c1c6f6f2c7ac30957d086f8bf8e25b0d
-31b009c65afd7d73bef4fa8654dd0b6a88f6bc4406b829181bd4550ac27468a2
-c5aeb7dc3b7b72dde7a1ee19555f5a49a1bab107fa4518920dd6ecf6e9c581b6
-f4a105a678b2d0deced6f00943f0b455f887af70e921fac8a7c656a759b29e86
-d1e2fe056f434f2460629459464d8e790b6f872693939fe550c0d01a83c68fa4
-1475977c34ace1ae30ea553d2253267935ec912ea53e79d78969e777c0e9d231
-6b60b3a31658bd4289c3bce73915ed1440e9956e12c47362f9cbcab8fbcfc03d
-a0659de1f823b6e571241f46ee86d70fe785179f12b0f53898ca09f0a9b4659f
-1c21b6420d6917a3afddf55886c91669804a8b2af9c22bbf00e54754ebe7fc4e
-
-Total reclaimed space: 0B
+CONTAINER ID   IMAGE     COMMAND             CREATED              STATUS         PORTS     NAMES
+d20e43354e61   busybox   "ping google.com"   About a minute ago   Up 8 seconds             youthful_jones
 
 ```
 
-KAO STO VIDIS OUTPUTED SU IDS DELETED CONTAINER-A
+ISTO TAKO MOGU VIDETI I LOGS ONTEINERA (AKO SAM ODLUCIO DA GA START-UJEM BEZ `-a` FLAG-A)
 
-A KAO STO SI MOGAO VIDETUI U DIALOGU, POMENUTA KOMANDA UKLANJA SVE IS `Image Cache`-A (STO ZNACI DA KADA SLEDECI PUT BUDES PONOVO ZELEO NEKI IMAGE, MORACES GA REDOWNLOAD-OVATI (TO JE SAMO NEKOLIKO EXTRA SEKUNDI CEKANJA))
+- `docker logs d20e43354e61`
 
-DA SADA LISTUJEM SVE CONTAINERE KOJE SAM IKADA KREIRAO
+**SAD CES VIDETI SAM ONAJ OUTPUT ping-A, JER JE TO ONO STO SE RUNN-UJE U CONTAINER-U**
 
-- `docker ps --all`
+# JA NECU CONTAINER ZAUSTAVITI SA `Ctrl` + `C`, JER NI NE MOGU, JER START-OVAO CONTAINER SA `-a` FLAGOM
 
-NECES NACI NISTA
+JA MOGU KORISTITI SLEDECE DVE KOMANDE
 
-```c
-CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+- `docker stop <container id>`
 
-```
+ILI
 
-# OVA `docker system prune` KOMANDA SE NAJCESCE RUNN-UJE NAKON NEKOLIKO NEDELJA ILI MESECI
+- `docker kill <container id>`
 
-KAK OTI NE BI UNUSED CONTAINERI EAT-OVALI SPACE
+**PRVA KOMAND CE POSLATI `SIGTERM` STO TERMINATE SIGNAL, A TO CE PROCESU U CONTAINER-U DATI SIGNAL DA SE ZAUSTAVI AT HIS OWN TIME** (**AKO ZELIS DA PROCESU DAS VREMENA DA SE SAM ZAUSTAVI, TI CES KORISTITI OVO, KAKO BI DAO VREMENA DA SE DOGODI A LITTLE BIT OF CLENUP**)
+
+TO JE ZATO JER BI TI ZELEO DA OSTAVIS VREMNA DA PROGRAMSKI JEZICI CUJU ONAJ SIGNAL O KOJEM SAM TI GOVORIO, DA USTVARI SLUSAJU ZA NJIM INSIDE OF CODEBASE ,AND AS SOON AS YOU GET THAT SIGNAL, MOZDA BI TI NA TO ZELEO DA POKUSAS DA ODRADIS NEKI CLENUP ILI DA EMMIT-UJES NEKI MESSAGE ILI SAVE-UJES SOME FILE
+
+**DRUGA KOMANDA ISSUE-UJE `SIGKILL`, ODNOSNO KILL SIGNAL PRIMARY RUNNING PROCESS-U INSIDE OF CONTAINER; OVO BI ZNACILO KAO DA GOVORIS `"TOU NEED TO SHUT DOWN RIGHT NOW"` I NECES STICI DA ODRADIS ANY ADDITIONAL WORK**
+
+JASNO TI JE DA CES NAJCESCE KORISTITI PRVU KOMANDU
+
+SADA CU DA ZAUSTAVIM POMENUTI CONTAINER, ODNOSNO PROCESS U NJEMU
+
+- `docker stop d20e43354e61`
+
