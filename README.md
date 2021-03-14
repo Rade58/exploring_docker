@@ -86,5 +86,20 @@ JER KAO STO VIDIS SADA U NASEM FILE SYSTEMU, OVAKVA JE SITUACIJA
 .  ..  .git  .gitignore  package.json  README.md
 ```
 
+#  ZASTO JA OVO NISAM TESTIRAO SA `hello-world` IMAGE-OM
 
+- `docker run hello-world ls`
 
+PA ZATO STO BIH DOBIO OVAKAV ERROR
+
+```c
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:367: starting container process caused: exec: "ls": executable file not found in $PATH: unknown.  
+```
+
+ISTO BI BILO DA SAM POKRENUO echo
+
+**PA OCIGLEDNO, OVE KOMANDE SU POSTOJALE ZA FS SNAPSHOT busybox IMAGE-A, ALI `hello-world` NEMA TE KOMANDE U SVOM FS SNAPSHOT-U**
+
+JEDNOSTAVNO ZA `hello-world` TE EXECUTBLE NE POSTOJE 
+
+TAMO POSTOJI SAMO ONAJ JEDAN SINGLE PROGRAM, JEDAN SINGLE FILE, A SV STO TO RADI JE PRINTOVANJE ONE PORUKE, KOJU SMO VIDELI RANIJE
