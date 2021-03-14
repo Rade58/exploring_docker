@@ -42,3 +42,29 @@ KAO STO VIDIS CONTAINER JE LISTED
 I VIDIS DOSTA STVARI, OD TOGA KAD JE KREIRAN DO TOGA KOLIKO TRAJE, PA NJEGOVOG ID-JA KOJG CES SIGURNO KORISTITI
 
 ZATIM TU SU AKTIVNI PORTOVI (NEMAS IH OVDE, LI SIGURNO JE DA CES SE BAVITI POKRETANJEM LOCALHOST-OVA)
+
+IMAS ISTO I RNDOMLY ASSIGNED NAME, TO JE U GORNJEM SLUCAJU *compassionate_morse*
+
+KADA ZAUSTAVIS ONAJ CONTAINER, I POKUSAS DA LIST-UJES, NECES VISE IMATI TAJ CONTAINER KAO LISTED
+
+# TI MOZES DA LIST-UJES CONTAINERS KOJE SI PRAVIO RANIJE
+
+**TADA KORISTIS `--all` FLAG**
+
+- `docker ps --all`
+
+EVO ST SAM DOBIO
+
+```c
+CONTAINER ID   IMAGE         COMMAND                CREATED             STATUS                         PORTS     NAMES
+72d15353d0a6   busybox       "ping google.com"      22 minutes ago      Exited (0) 20 minutes ago                compassionate_morse
+31b009c65afd   hello-world   "ls"                   About an hour ago   Created                                  sad_chaplygin
+c5aeb7dc3b7b   busybox       "ls -a"                About an hour ago   Exited (0) About an hour ago             affectionate_agnesi
+f4a105a678b2   busybox       "ls"                   About an hour ago   Exited (0) About an hour ago             agitated_booth
+d1e2fe056f43   busybox       "echo hello stavros"   About an hour ago   Exited (0) About an hour ago             silly_feistel
+1475977c34ac   hello-world   "/hello"               3 hours ago         Exited (0) 3 hours ago                   great_mcclintock
+6b60b3a31658   hello-world   "/hello"               4 hours ago         Exited (0) 4 hours ago                   strange_ptolemy
+a0659de1f823   hello-world   "/hello"               5 hours ago         Exited (0) 5 hours ago                   cool_edison
+1c21b6420d69   hello-world   "/hello"               6 hours ago         Exited (0) 6 hours ago                   affectionate_meninsky
+
+```
