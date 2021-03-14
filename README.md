@@ -129,4 +129,45 @@ Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
 Status: Downloaded newer image for hello-world:latest
 ```
 
+DAKLE DOCKER SERVER JE REACH-OVAO DO DOCKER HUB-A I REKAO: "I'M LOOKING FOR AN IMAGE CALLED `hello-world`. DO YOU HAVE ONE?" 
 
+NARAVNO `Docker Hub` IMA TAJ IMAGE
+
+`Docker Server` JE ONDA DOWNLOAD-OVAO `hello-world` FILE I STORE-OVAO GA JE U `Image Cache` ODAKLE SE MOZE RUNN-OVATI U BUDUCE, BEZ DA MORAS DA REDOWNLOAD-UJES ISTU STVAR SA DOCKER HUB-A
+
+# DOCKER SERVER ONDA VADI IMAGE IZ CACHE, DA BI NAPRAVIO CONTAINER INSTANCU TOG IMAGE-A
+
+DAKLE CONTAINER JE INSTANCE OF AN IMAGE, I NJEN PURPOSE JE DA RUN-UJE ONE SPECIFIC PROGRAM
+
+TAJ SINGLE PROGRAM JE U MOM SLUCAJU U TERMINALU PRINTOVAO MESSAGE
+
+# ZATO KADA RUN-UJES `hello-world` FOR THE SECOND TIME, NECES IMATI ONU INDIKACIJU DA SE REACH-UJE DO DOCKER HUB-A, ZATO STO SE TO I NERADI
+
+USTVARI SE IMAGE UZIMA IZ IMAGE CACHE-A
+
+- `docker run hello-world`
+
+KAO STO VIDIS SADA JE PRINTED SMAO MESSAGE
+
+```c
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
