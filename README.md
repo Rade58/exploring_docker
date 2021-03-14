@@ -24,7 +24,7 @@ a0659de1f823   hello-world   "/hello"               6 hours ago      Exited (0) 
 
 KREIRAU/RUNNOVACU JOS JEDAN CONTAINER
 
-EVO
+EVO, RUNN-UJEM I KREIRAM I KORISTIM OVERRIDE STARTUP COMMAND
 
 - `docker run busybox echo Nick Mullen Train`
 
