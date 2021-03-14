@@ -108,4 +108,25 @@ To generate this message, Docker took the following steps:
     to your terminal.
 ```
 
+## PRVA STVAR KOJU JE DOCKER SERVER URADIO JESTE DA JE POGLEDAO DA LI IMAM LOKALNU KOPIJU `hello-world`-A; TO JE PROVERIO U NECEMU STO SE ZOVE `Image Cache`
+
+I OCIGLEDNO TO TAMO NIJE NASAO
+
+```c
+Unable to find image 'hello-world:latest' locally
+```
+
+JER TEK SI INSTALIRAO DOCKER PRE PAR MINUTA U PROSLOM BRANCH-U I `Image Cache` JE EMPTY (NISTA NIKKAD NIJE BILO INSTALIRANO)
+
+## ZATO JE DOCKER SERVER DECIDE-OVAO DA REACH-UJE U FREE SERVICE, KOJI SE ZOVE `Docker Hub`
+
+TO JE OVO
+
+```c
+latest: Pulling from library/hello-world
+b8dfde127a29: Pull complete 
+Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
+Status: Downloaded newer image for hello-world:latest
+```
+
 
