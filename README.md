@@ -19,3 +19,5 @@ a0659de1f823   hello-world   "/hello"               6 hours ago      Exited (0) 
 1c21b6420d69   hello-world   "/hello"               7 hours ago      Exited (0) 7 hours ago                affectionate_meninsky
 
 ```
+
+**VIDIS KAKO NEKI OD NJIH IMAJU `Exited (0)` STATUS**
