@@ -68,3 +68,9 @@ a0659de1f823   hello-world   "/hello"               5 hours ago         Exited (
 1c21b6420d69   hello-world   "/hello"               6 hours ago         Exited (0) 6 hours ago                   affectionate_meninsky
 
 ```
+
+## UOBICNO SE `ps` KOMANDA NAJCESCE KORISTI DA SE DODJE DO ID-JA NEKOG CONTAINERA
+
+TO JE KADA ZELIS DA ISSUE-UJES KOMANDE NA SPECIFIC CONTAINER-U
+
+LOGICNO JE DA TI TREBA NJEGOV ID
