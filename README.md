@@ -21,3 +21,30 @@ a0659de1f823   hello-world   "/hello"               6 hours ago      Exited (0) 
 ```
 
 **VIDIS KAKO NEKI OD NJIH IMAJU `Exited (0)` STATUS**
+
+KREIRAU/RUNNOVACU JOS JEDAN CONTAINER
+
+EVO
+
+- `docker run busybox echo Nick Mullen Train`
+
+```c
+Nick Mullen Train
+```
+
+# PRONACI CU CONTAINER KOJI SAM KREIRAO/RUN-OVAO, I KOJI JE SADA EXITED
+
+- `docker ps --all`
+
+IZ OUTPUTA SAM SAZNAO NJGOV ID KAO I SVE OSTALO STO MOGU SAZNATI
+
+```c
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS                          PORTS     NAMES
+acb6a7505d3a   busybox       "echo Nick Mullen Tr…"   About a minute ago   Exited (0) About a minute ago             frosty_ritchie
+
+...
+...
+...
+
+```
+
