@@ -41,5 +41,42 @@ OK
 127.0.0.1:6379> 
 ```
 
+# U CONTAINER SHELL-U JA MOGU KUCATI BILO KOJE KOMANDE KOJE MOGU KUCATI U UNIX ENVIROMENTU
 
+TO JE ZATO STO SI TI USTVARI U LINUX VIRTUAL MACHINE-U (PREDPOSTAVLJAM)
 
+EVO PROBACU NEKE KOMANDE
+
+```bash
+# ls
+dump.rdb
+# ls -a
+.  ..  dump.rdb
+# pwd
+/data
+# cd /
+# ls
+bin  boot  data  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+# ls -a                                                                                                                                                                                                       
+.  ..  .dockerenv  bin  boot  data  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var                                                                               
+#
+```
+
+KAO STO VIDIS OTISAO SAM U ROOT I TU VIDIM ALL FILES AND FOLDERS CONTAINER-A
+
+MOGU EXECUTE-OVATI I echo I DRUGE KOMANDE
+
+```bash
+# echo Hi there                                                                                                                                                                                               
+Hi there                                                                                                                                                                                                      
+#     
+```
+
+MOGU EXPORT-OVATI ENVIROMENT VARIABLES ,PA JE MOZES ECHO-OVATI
+
+```
+# export some=8                                                                                                                                                                                               
+# echo $some                                                                                                                                                                                                  
+8                                                                                                                                                                                                             
+#   
+```
