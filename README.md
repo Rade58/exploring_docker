@@ -50,3 +50,13 @@ RUN apk add --update redis
 # as a container
 CMD ["redis-server"]
 ```
+
+# SADA CU DA POKRENEM KOMANDU `docker build`
+
+IDEM U FOLDER GDE JE MOJ DOCKERFILE
+
+- `cd redis-image`
+
+POKRECEM POMENUTU KOMANDU
+
+- `docker build .`
