@@ -42,3 +42,7 @@ KAO STO VIDIS FILE JE ZAISTA TU
 bin   dev   etc   home  proc  root  sys   tmp   usr   var
 / # 
 ```
+
+# DAKLE CONTAINERI IMAJU SEPARATE FILESYSTEMS
+
+NE POSTOJI SHARING DATA BETWEEN THEM
