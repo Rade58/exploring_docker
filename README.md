@@ -60,3 +60,21 @@ IDEM U FOLDER GDE JE MOJ DOCKERFILE
 POKRECEM POMENUTU KOMANDU
 
 - `docker build .`
+
+VIDEO SAM VECI STREAM OUTPUTA
+
+NA KRAJU CES VIDETI `"Successfully Built <neki id>"`
+
+# UZECES TAJ ID DA RUNN-UJES CONTAINER
+
+- `ocker run <taj id>`
+
+I REDIS SERVER JE SADA STARTOVAN
+
+- `docker ps`
+
+```c
+CONTAINER ID   IMAGE          COMMAND          CREATED          STATUS          PORTS     NAMES
+63d524a5ccbb   75f580a2cf20   "redis-server"   51 seconds ago   Up 48 seconds             beautiful_moser
+
+```
