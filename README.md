@@ -1,3 +1,44 @@
 # CONTAINER ISOLATION
 
+PA NA PRIMER AKO NAPRAVIS JEDAN FILE U JEDNOM CONTAINERU ON TI NECE BITI DOSTUPAN U DRUGOM
 
+MOZDA NISAM SPOMNUO ZASTO TAKAVA UCAURENOST CONTAINERA POSTIJA
+
+PA OPET PREKO PRIMERA; STA DA TI RECIMO ZA JEDAN PROGRAM TREBA JEDNA VERIJA PYTHON-A, A ZA DRUGI DRUGA VERZIJA; PA TEBI BI UPRAVO TADA BILO NAJBOLJE DA KORISTIS CONTAINERE; ZA JEDAN PROGRAM KORISTIS JEDNU VERZIJU, A ZA DRUGI DRUGU (OVO JE NEKAKO U MOJOJ SLOBODNOJ ITERPRETACIJI)
+
+# SADA CU KREIRATI 1 CONTAINER, I UCI CU U SHELL ODMAH, KAO STO SAM TO RADIO U PROSLOM BRANCH-U
+
+- `docker run -it busybox sh`
+
+# PA CU ISTO OTVITI NOVI TERMINAL DA BI KREIRAO DRUGI CONTAINER NA ISTI NACIN
+
+- `docker run -it busybox sh`
+
+# DA POGLEDAM DA LI IMAM DVA RUNNNG CONTAINER-A
+
+- `docker ps`
+
+```c
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+8edfd13829bd   busybox   "sh"      34 seconds ago   Up 31 seconds             competent_sinoussi
+f087e97890df   busybox   "sh"      3 minutes ago    Up 3 minutes              competent_ritchie
+```
+  
+# SADA CU U SHELL-U JEDNOG DOCKERA NAPRAVITI JEDAN FILE
+
+```c
+/ # touch index.html
+/ # ls
+bin         dev         etc         home        index.html  proc        root        sys         tmp         usr         var
+/ # 
+```
+
+KAO STO VIDIS FILE JE ZAISTA TU
+
+# ALI TI NEMAS PRISTUP TOM FILE-U IZ DRUGOG CONTAINER-A
+
+```c
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+/ # 
+```
