@@ -10,10 +10,43 @@ MOZES TO URADITI OVDE U SVOM PROJEKTU
 
 - `mkdir redis-image`
 
-- `cd redis-image`
-
 NAPRAVICU DOCKERFILLE
 
-- `touch Dockerfile`
+- `touch redis-image/Dockerfile`
 
 **OVO MI JE ODMAH PREDLOZILO DA INSTALIRAM DOCKER EXTENSSION ZA VSCODE (JA SAM TO INSTALIRAO IKO NE ZNAM DA LI C MI TREBATI)**
+
+# SADA CU DA STAVIM NEKE KOMENTARE U DOCKERFILE-U
+
+- `code redis-image/Dockerfile`
+
+SPECIFICIRAO SAM NEKE KOMENTARE KOJI OBJASNJAVAJU STA CU URADITI
+
+```dockerfile
+# Koristi existing docker image as a base
+
+
+# Download and install a dependancy
+
+
+
+# Reci iamge-u sta da radi when it starts
+# as a container
+```
+
+# A SADA CU DA PISEM KOMANDE U DOCKERFILE-U A KASNIJE CU TI RECI STA ONE PREDSTAVLJAJU
+
+- `code redis-image/Dockerfile`
+
+``` dockerfile
+# Koristi existing docker image as a base
+FROM alpine
+
+# Download and install a dependancy
+RUN apk add --update redis
+
+
+# Reci iamge-u sta da radi when it starts
+# as a container
+CMD ["redis-server"]
+```
