@@ -80,3 +80,5 @@ MOGU EXPORT-OVATI ENVIROMENT VARIABLES ,PA JE MOZES ECHO-OVATI
 8                                                                                                                                                                                                             
 #   
 ```
+
+**DAKLE SA `sh` DOBIJAS FULL TERMINAL ACCESS IN CONTEXT OF CONTAINER, SYTO JE VEOMA POWERFULL**
