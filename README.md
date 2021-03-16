@@ -60,4 +60,24 @@ MEDJUTIM MORACU (E ZNAM DA LI JE REQUIRED ALI JA CU TO URADITI) DA SE SIGN-UJEM 
 
 - `docker build -t radebajic/redis:latest .` (NE ZABOTRVI NA DOT (.) NA KRAJU )
 
+EVO STA CES DOBITI U OUTPUT-U
+
+```c
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM alpine
+ ---> 28f6e2705743
+Step 2/4 : RUN apk add --update gcc
+ ---> Using cache
+ ---> cf03b3827227
+Step 3/4 : RUN apk add --update redis
+ ---> Using cache
+ ---> 9ae579fb3b92
+Step 4/4 : CMD ["redis-server"]
+ ---> Using cache
+ ---> d793a10a08c9
+Successfully built d793a10a08c9
+Successfully tagged radebajic/redis:latest
+```
+
+
 
