@@ -38,3 +38,34 @@ CMD ["npm", "start"]
 - `cd webapp`
 
 - `docker build .`
+
+VIDECES DA CE SADA INSTALACIJA DEPNDANCIES-A BITI USPESNA
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/4 : FROM node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/4 : COPY ./ ./
+ ---> eb5020afbc4e
+Step 3/4 : RUN npm install
+ ---> Running in 8826163798cf
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN webapp@1.0.0 No description
+npm WARN webapp@1.0.0 No repository field.
+
+added 50 packages from 37 contributors and audited 50 packages in 5.941s
+found 0 vulnerabilities
+
+Removing intermediate container 8826163798cf
+ ---> 424b268f7377
+Step 4/4 : CMD ["npm", "start"]
+ ---> Running in ea5965705701
+Removing intermediate container ea5965705701
+ ---> c32cb927a28f
+Successfully built c32cb927a28f
+
+```
+
+GORE VIDIS I COPY STEP A VIDIS I npm install
+
+IMAS I NEKE WARNINGS ALI ONI NISU ISSUE
