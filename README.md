@@ -118,3 +118,11 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED              
 4362bdf62c82   radebajic/webapp   "docker-entrypoint.s…"   About a minute ago   Up About a minute             confident_hugle
 
 ```
+
+# PREVARIO SI SE AKO MISLIS DA CES MOCI DA HITT-UJES GORNJI ENDPOINT
+
+NE MOZES JER APP RUNN-UJE UNUTAR CONTAINER-A
+
+MORAM DA VIDIM KAKO CU MOCI DA OSTVARIM KONEKCIJU
+
+JER SADA AKO U BROWSERU UKUCAS GORNJI LOCALHOST, IMACES 404
