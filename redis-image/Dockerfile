@@ -3,6 +3,7 @@ FROM alpine
 
 # Download and install a dependancy
 RUN apk add --update redis
+RUN apk add --update gcc
 
 
 # Reci iamge-u sta da radi when it starts
