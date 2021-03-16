@@ -1,6 +1,6 @@
 
 # Specify a base image
-FROM alpine
+FROM node:lts-alpine3.10
 
 # Install some dependancies
 RUN npm install

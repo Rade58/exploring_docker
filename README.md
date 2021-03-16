@@ -97,3 +97,62 @@ A KADAIZABERES alpine VERZIJU, ONA PRETTY MUCH IMA SAMO NODEJS I NOTHING ELSE, A
 JA CU KORISTITI alpine VERZIJU
 
 MISLIM DA OVA VERZIJA INCLUUDE-UJE I npm ,JER OBICNO ON DOLAZI SA INSTALACIJOM node-A
+
+IAKO JE AUTOR WORKSHOPA SAMO KORISTIO `alpine` JA KOPITRATI I PASS-OVATI NEKU DRUGU VERZIJU, CISTO DA ISPROBM
+
+NA PRIMER `lts-alpine3.10`
+
+- `code webapp/Dockerfile`
+
+```dockerfile
+# Specify a base image
+FROM node:lts-alpine3.10
+
+# Install some dependancies
+RUN npm install
+
+# Default command
+CMD ["npm", "start"]
+```
+
+# POKUSACU SADA DA BUILD-UJEM IMAGE
+
+- `cd webapp`
+
+- `docker build .`
+
+IZGLEDA DA CE M IBUILD USPETA ALI UZ JEDAN ERROR A TO JE DA NE MOZE DA SE PRONADJE `package.json` FILE, KOJEG OCITO IMAM
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/3 : FROM node:lts-alpine3.10
+lts-alpine3.10: Pulling from library/node
+8464c5956bbe: Pull complete 
+d4c1926b1fbf: Pull complete 
+c74787b8b1de: Pull complete 
+8fa762bf504d: Pull complete 
+Digest: sha256:e36bc76bd849dfbd2328b9ca16a9cf15c10c136d7021ad64dc86360cc1aa008c
+Status: Downloaded newer image for node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/3 : RUN npm install
+ ---> Running in 0cef8c958000
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+
+up to date in 1.219s
+found 0 vulnerabilities
+
+Removing intermediate container 0cef8c958000
+ ---> 1c65f52ea365
+Step 3/3 : CMD ["npm", "start"]
+ ---> Running in 55f1e30997de
+Removing intermediate container 55f1e30997de
+ ---> a6d9dc04ebd0
+Successfully built a6d9dc04ebd0
+
+```
