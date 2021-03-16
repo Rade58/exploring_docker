@@ -111,3 +111,10 @@ A TADA CE SE IZVRSITI I STARTUP KOMAND-A, KOJA POKRECE NODE APP
 app listening on: http://localhost:8080      
 ```
 
+- `docker ps`
+
+```c
+CONTAINER ID   IMAGE              COMMAND                  CREATED              STATUS              PORTS     NAMES
+4362bdf62c82   radebajic/webapp   "docker-entrypoint.s…"   About a minute ago   Up About a minute             confident_hugle
+
+```
