@@ -79,5 +79,18 @@ Successfully built d793a10a08c9
 Successfully tagged radebajic/redis:latest
 ```
 
+IMAS N KRAJU IMAGE-OV ID, ALI TAKODJE I TAG
 
+## SADA CU DA STARTUP-UJEM CONTAINER, KORISTECI TAG
+
+- `docker run radebajic/redis:latest`
+
+I USPESNO SAM KREIRAO I STARTOVAO CONTAINER
+
+- `docker ps`
+
+```c
+CONTAINER ID   IMAGE                    COMMAND          CREATED          STATUS          PORTS     NAMES
+522a0b0d5e24   radebajic/redis:latest   "redis-server"   51 seconds ago   Up 46 seconds             musing_bell
+```
 
