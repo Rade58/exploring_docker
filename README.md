@@ -78,5 +78,31 @@ BICE IZGRADJEN NOVI IMAGE, ALI CE SE U POTPUNOSTI ISKORISTITI TAJ CACHED
 
 PREDPOSTAVLJAM
 
+URADICU TO DA VIDIS IN ACTION
+
+- `cd redis-image/`
+
+- `docker build .`
+
+```c
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM alpine
+ ---> 28f6e2705743
+Step 2/4 : RUN apk add --update redis
+ ---> Using cache
+ ---> 29d1fed4dd6e
+Step 3/4 : RUN apk add --update gcc
+ ---> Using cache
+ ---> 42e3d366f9c0
+Step 4/4 : CMD ["redis-server"]
+ ---> Using cache
+ ---> 439e0aae44c5
+Successfully built 439e0aae44c5
+
+```
+
+OVO GORE JE INSTANTNO BILO OUTPUTED
+
+
 
 
