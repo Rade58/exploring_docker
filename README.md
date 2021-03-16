@@ -99,4 +99,15 @@ Successfully built c32cb927a28f
 Successfully tagged radebajic/webapp:latest
 ```
 
+# SADA CU DA INSTATICIZIRAM CONTAINER OD MOG IMAGE-A
+
+A TADA CE SE IZVRSITI I STARTUP KOMAND-A, KOJA POKRECE NODE APP
+
+- `docker run radebajic/webapp`
+
+```c             
+> webapp@1.0.0 start /                                                       
+> node index.js                                                                            
+app listening on: http://localhost:8080      
+```
 
