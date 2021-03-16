@@ -58,4 +58,6 @@ MEDJUTIM MORACU (E ZNAM DA LI JE REQUIRED ALI JA CU TO URADITI) DA SE SIGN-UJEM 
 
 - `cd redis-image`
 
-- `docker build -t radebajic/redis:latest`
+- `docker build -t radebajic/redis:latest .` (NE ZABOTRVI NA DOT (.) NA KRAJU )
+
+
