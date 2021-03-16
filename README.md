@@ -61,3 +61,7 @@ X-Powered-By: Express
 Hello Staavros!
 
 ```
+
+# DAKLE DA SUMIRAM KAKO SE BUILDUJE `run` KOMANDA SA PORT FORWARDINGOM
+
+`docker run -p <my machine port>:<container port> <image name>`
