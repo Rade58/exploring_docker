@@ -73,3 +73,30 @@ IMAS I NEKE WARNINGS ALI ONI NISU ISSUE
 ISTO TAKO KOREKTNO JE GENERISAN IMAGE
 
 I DOSTUPAN MI JE NJEGOV ID, KOJI NATRVNO MOGU KORISTITI ZA INSTATICIZIRANJE CONTAINER-A
+
+# POSTO NE VOLIM DA RADIM SA ID-JEVIMA, SADA CU DA REBUILD-UJEM IMAGE I KORISTIM TAG (IME KOJE CU DATI MOM IMAGE-U)
+
+- `docker build -t radebajic/webapp:latest .` (ILI NE MORAS DA STAVLJAS VERZIJU, BIC PPENDED IAKO JE NE SPECIFICIRAS)
+
+IPAK URADI OVAKO, MADA NE BI POGRESIO I DA SI URADIO OVO PREDHODNO
+
+- `docker build -t radebajic/webapp .`
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/4 : FROM node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/4 : COPY ./ ./
+ ---> Using cache
+ ---> eb5020afbc4e
+Step 3/4 : RUN npm install
+ ---> Using cache
+ ---> 424b268f7377
+Step 4/4 : CMD ["npm", "start"]
+ ---> Using cache
+ ---> c32cb927a28f
+Successfully built c32cb927a28f
+Successfully tagged radebajic/webapp:latest
+```
+
+
