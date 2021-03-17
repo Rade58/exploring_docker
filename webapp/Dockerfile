@@ -2,15 +2,23 @@
 # Specify a base image
 FROM node:lts-alpine3.10
 
-# OVDE DODAJEM WORKDIR CONTAINERA
-# I U TAJ WORKDIR CE BITI KOPIRANO ONO
-# DEFINISANO COPY INSTRUKCIJOM
+
 WORKDIR /usr/webapp
 
-COPY ./ ./
+# OVO MENJAM
+# COPY ./ ./
+# DAKLE SAMO KOPIRAM package.json
+COPY ./package.json ./
+
 
 # Install some dependancies
 RUN npm install
+
+# A OVDE KOPIRAM SVE OSTALO I CURRENT WORKING DIRECTORY-JA
+# A TO SVE JE index.js
+COPY ./ ./
+
+
 
 # Default command
 CMD ["npm", "start"]
