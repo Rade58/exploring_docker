@@ -327,3 +327,16 @@ CONTAINER RADI, A RADI I SERVER U NJEMU
 MOGU SADA DA HIT-UJEM SERVER
 
 - `http GET :8080`
+
+```c
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 34
+Content-Type: text/html; charset=utf-8
+Date: Wed, 17 Mar 2021 16:18:49 GMT
+ETag: W/"22-VjxRwhPXOETFNWNs9EvHKbw0D2E"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+Adam Friedland is such a cool Adam
+```
