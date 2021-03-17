@@ -317,3 +317,13 @@ Removing intermediate container cdf87102c7df
 Successfully built e0402b53f209
 Successfully tagged radebajic/webapp:latest
 ```
+
+MOZES SADA DA INSTATICIZIRAS CONTAINER
+
+- `docker run -p 8080:8080 radebajic/webapp`
+
+CONTAINER RADI, A RADI I SERVER U NJEMU
+
+MOGU SADA DA HIT-UJEM SERVER
+
+- `http GET :8080`
