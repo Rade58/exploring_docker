@@ -200,7 +200,7 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED         STATU
 
 I USPESNO SAM OTVORIO SHELL ZA RUNNING CONTAINER
 
-```
+```shell
 /usr/webapp # ls
 Dockerfile         index.js           node_modules       package-lock.json  package.json
 /usr/webapp # cat index.js 
@@ -214,7 +214,10 @@ app.get('/', (req, res) => {
 
 app.listen(8080, () => {
   console.log("app listening on: http://localhost:8080")
-})/usr/webapp # 
-
-
+})
+/usr/webapp # 
 ```
+
+VIDIS GORE SAM PROVERIO SA ls KOJE FILE-OVE IMAM U TOM usr/webapp FOLDERU, U KOJEM JE I SHELL OTVORED PO DEFAULTU
+
+A I STAMPAO SAM SADRZINU index.js FAJLA
