@@ -191,3 +191,74 @@ COPY ./ ./
 # Default command
 CMD ["npm", "start"]
 ```
+
+# SADA CU OPET DA BUILD-UJEM IMAGE
+
+OVO JE DAKLE FRESH BUILD, I OPET CE SE IZVRSITI PONOVNE INSTLACIJE, ALI TO MI NIJE BITNO, **BITNI SU MI BUILD-OVI, SAMO ONDA KADA BUDEM MENJAO `index.js`**
+
+- `cd webapp/`
+
+- `docker build -t radebajic/webapp .`
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/6 : FROM node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/6 : WORKDIR /usr/webapp
+ ---> Using cache
+ ---> af119fa3d43c
+Step 3/6 : COPY ./package.json ./
+ ---> 2b03b6e59dd0
+Step 4/6 : RUN npm install
+ ---> Running in 32b5c422155f
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN webapp@1.0.0 No description
+npm WARN webapp@1.0.0 No repository field.
+
+added 50 packages from 37 contributors and audited 50 packages in 5.593s
+found 0 vulnerabilities
+
+Removing intermediate container 32b5c422155f
+ ---> fbdba9a60741
+Step 5/6 : COPY ./ ./
+ ---> e1c58e39d367
+Step 6/6 : CMD ["npm", "start"]
+ ---> Running in 073b1e705d53
+Removing intermediate container 073b1e705d53
+ ---> ab349e8c332c
+Successfully built ab349e8c332c
+Successfully tagged radebajic/webapp:latest
+
+```
+
+KAO STO VIDIS GGORE, DESILA SE INSTALACIJA NODE MODULE, PONOVO, ALI TO NISTA NIJE SPORNO, JER KAO STO REKOH EDITOVAO SAM DOCKER FILE, OD COPY-JA, I TO CE SIGURNO PROIZVESTI REBUILD, ODNONO PONOVNU INSTLACIJU NODE MODULA
+
+**RUNN-OVACU ISTU KOMANDU SECOND TIME**
+
+- `docker build -t radebajic/webapp .`
+
+I INSTANTNO SE OVO OUTPUT-OVALO STO ZNACI DA NISTA NIJE RERUNNED ODNOSNO NEMA PONOVNIH INSTLACIJA, JER NISTA NIJE PROMENJENO
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/6 : FROM node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/6 : WORKDIR /usr/webapp
+ ---> Using cache
+ ---> af119fa3d43c
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 2b03b6e59dd0
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> fbdba9a60741
+Step 5/6 : COPY ./ ./
+ ---> Using cache
+ ---> e1c58e39d367
+Step 6/6 : CMD ["npm", "start"]
+ ---> Using cache
+ ---> ab349e8c332c
+Successfully built ab349e8c332c
+Successfully tagged radebajic/webapp:latest
+```
+
