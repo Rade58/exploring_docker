@@ -122,4 +122,59 @@ Successfully tagged radebajic/webapp:latest
 
 OPER TE PODSECAM KAKO JE SVE OD ONE UMETNUTE INSTRUKCIJE PA NADALJE MORALO DA SE RERUN-UJE, DOK SVE ZA ONE INSTRUKCIJE IZNAD TOGA (DODUSE IMA SAMO JEDNA ZA BASE IMAGE), POSEGLO ZA CACHEIRANIM STVARIMA
 
-# SADA MOZEMO DA OD IMAGE-A INSTATICIZIRAMO CONTAINER 
+# SADA MOZEMO DA OD IMAGE-A INSTATICIZIRAMO CONTAINER; I OVOG PUTA NECU OVERRIDE-OVATI STARTAUP KOMANDU JER ZELIM DA VIDIM DA LI CE NODEJS APP STARTOVATI
+
+NE ZABORAVI PORT FORWARDING
+
+- `docker run -p 8080:8080 radebajic/webapp`
+
+USPESNO JE STARTED NODE APP INSIDE CONTAINER
+
+```c
+> webapp@1.0.0 start /usr/webapp
+> node index.js
+
+app listening on: http://localhost:8080
+
+```
+
+DA HITT-UJEM ENDPOINT
+
+```bash
+http GET :8080s
+```
+
+I TO FUNKCIONISE
+
+```bash
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 15
+Content-Type: text/html; charset=utf-8
+Date: Wed, 17 Mar 2021 11:07:34 GMT
+ETag: W/"f-9rwFLe1pmxhytWtRxsYzJdvkHiE"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+Hello Staavros!
+
+```
+
+ZAUSTAVICU CONTAINER
+
+# SAA CU INSTATICIZIRATI CONTAINER, TAKO STO CU OTVORITI CONTAINER SHELL, CIME SE OVERRIDE-UJE STARTUP COMMAND
+
+OVO RADIM JER ZELIM DA PREGLEDAM FILESYSTEM
+
+IAKO ZNAM DA CE SE WEB APP NACI U /user/webapp U CONTAINERU, CISTO ZELIM TO DA POKAZEM
+
+- `docker run -it radebajic/webapp sh`
+
+KADA KUCAS KREIRACE SE  CONTAINER, I SHELL C BITI OTVOREN UPRAVO U `usr/webapp` DIREKTORIJUMU CONTAINER-OVOG FILESYSTEMA
+
+```c
+/usr/webapp # ls
+Dockerfile         index.js           node_modules       package-lock.json  package.json
+/usr/webapp # 
+
+```
