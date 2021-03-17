@@ -25,5 +25,18 @@ JER SAMO ZELIM DA IMAM PRISTUP FILE-OVIMA IFOLDERIMA FILESYSTEMA CONTAINER-A
 SAD SAM U SHELL-U CONTAINER-A
 
 ```shell
-#
+/ # ls
+Dockerfile         etc                lib                node_modules       package.json       run                sys                var
+bin                home               media              opt                proc               sbin               tmp
+dev                index.js           mnt                package-lock.json  root               srv                usr
+/ # 
+
 ```
+
+DAKLE KADA SI ISSUEOVAO COPY INSTRUKCIJU U PROSLOM BRANCH-U (SPECIFICIRAO TO U DOCKERFILE-U), TI SI index.js package.json package.lock.json USTVARI KOPIRAO U ROOT DIRECTORY CONTAINER-OVOG FILESYSTEMA
+
+ZBOG INSTLACIJA GENERISANI SU I node_modules
+
+**OVO NIJE BEST PRZTICE, PROJEKAT JE TREBAO DA BUDE U ITS OWN FOLDERU**
+
+MOZES IATI NSTO STO JE CONFLICTING, PA SI MOGAO LAKO OVERWRITE-OVATI NESTO STO DOLAZI SA FILESYSTEMOM, NEKI IMPORTAND FILE ILI FOLDER
