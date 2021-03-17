@@ -83,8 +83,43 @@ CMD ["npm", "start"]
 
 # POSTO SMO MENJALI DOCKERFILE, MORAMO DA REBUILD-UJEMO IMAGE
 
+NARAVNO PRVO EXIT-UJ IZ WORKING CONTAINER-A ,AKO GA IMAS
+
 - `cd webapp`
 
 - `docker build -t radebajic/webapp .`
+
+I BUILD JE BIO USPESAN
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/5 : FROM node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/5 : WORKDIR /usr/webapp
+ ---> Running in a3ab3233f96c
+Removing intermediate container a3ab3233f96c
+ ---> af119fa3d43c
+Step 3/5 : COPY ./ ./
+ ---> 015aff7c0f58
+Step 4/5 : RUN npm install
+ ---> Running in de79f906cf3c
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN webapp@1.0.0 No description
+npm WARN webapp@1.0.0 No repository field.
+
+added 50 packages from 37 contributors and audited 50 packages in 5.448s
+found 0 vulnerabilities
+
+Removing intermediate container de79f906cf3c
+ ---> fee656ff1974
+Step 5/5 : CMD ["npm", "start"]
+ ---> Running in 299ebb85c8d9
+Removing intermediate container 299ebb85c8d9
+ ---> 046e07a18733
+Successfully built 046e07a18733
+Successfully tagged radebajic/webapp:latest
+```
+
+OPER TE PODSECAM KAKO JE SVE OD ONE UMETNUTE INSTRUKCIJE PA NADALJE MORALO DA SE RERUN-UJE, DOK SVE ZA ONE INSTRUKCIJE IZNAD TOGA (DODUSE IMA SAMO JEDNA ZA BASE IMAGE), POSEGLO ZA CACHEIRANIM STVARIMA
 
 # SADA MOZEMO DA OD IMAGE-A INSTATICIZIRAMO CONTAINER 
