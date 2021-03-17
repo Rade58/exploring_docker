@@ -239,6 +239,8 @@ KAO STO VIDIS GGORE, DESILA SE INSTALACIJA NODE MODULE, PONOVO, ALI TO NISTA NIJ
 
 I INSTANTNO SE OVO OUTPUT-OVALO STO ZNACI DA NISTA NIJE RERUNNED ODNOSNO NEMA PONOVNIH INSTLACIJA, JER NISTA NIJE PROMENJENO
 
+JER SE CACHE KORISTIO OVOG PUTA U POTPUNOSTI
+
 ```c
 Sending build context to Docker daemon  4.096kB
 Step 1/6 : FROM node:lts-alpine3.10
@@ -262,3 +264,56 @@ Successfully built ab349e8c332c
 Successfully tagged radebajic/webapp:latest
 ```
 
+# SADA CU KONACNO DA PROMENIM `index.js` FAJL ,NAKON CEGA CU OPET DA INICIRAM REBUILD IMAGE-A
+
+- `code webapp/index.js`
+
+```js
+const express = require("express")
+
+const app = express()
+
+app.get('/', (req, res) => {
+  // UMESTO OVOGA
+  // res.send("Nick Mullen Likes Culen");
+  // DEFINISEM OVO
+
+  res.send("Adam Friedland is such a cool Adam")
+
+})
+
+app.listen(8080, () => {
+  console.log("app listening on: http://localhost:8080")
+})
+```
+
+SADA CU DA REBUILD-UJEM
+
+I S OBZIROM DA SE OVAJ FAJL, KOPIRA POSLE INSTALACIJA, ZNAM DA REBUILD NECE POTRAJATI DUGO
+
+- `cd webapp/`
+
+- `docker build -t radebajic/webapp .`
+
+```c
+Sending build context to Docker daemon  4.096kB
+Step 1/6 : FROM node:lts-alpine3.10
+ ---> 07d655d75411
+Step 2/6 : WORKDIR /usr/webapp
+ ---> Using cache
+ ---> af119fa3d43c
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 2b03b6e59dd0
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> fbdba9a60741
+Step 5/6 : COPY ./ ./
+ ---> 239df64ad485
+Step 6/6 : CMD ["npm", "start"]
+ ---> Running in cdf87102c7df
+Removing intermediate container cdf87102c7df
+ ---> e0402b53f209
+Successfully built e0402b53f209
+Successfully tagged radebajic/webapp:latest
+```

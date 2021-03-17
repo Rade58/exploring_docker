@@ -4,9 +4,10 @@ const app = express()
 
 app.get('/', (req, res) => {
   // UMESTO OVOGA
-  // res.send("Hello Staavros!")
-  // NAPISACU OVO
-  res.send("Nick Mullen Likes Culen");
+  // res.send("Nick Mullen Likes Culen");
+  // DEFINISEM OVO
+
+  res.send("Adam Friedland is such a cool Adam")
 
 })
 
