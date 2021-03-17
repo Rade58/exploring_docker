@@ -162,7 +162,7 @@ Hello Staavros!
 
 ZAUSTAVICU CONTAINER
 
-# SAA CU INSTATICIZIRATI CONTAINER, TAKO STO CU OTVORITI CONTAINER SHELL, CIME SE OVERRIDE-UJE STARTUP COMMAND
+# SADA CU INSTATICIZIRATI CONTAINER, TAKO STO CU OTVORITI CONTAINER SHELL, CIME SE OVERRIDE-UJE STARTUP COMMAND
 
 OVO RADIM JER ZELIM DA PREGLEDAM FILESYSTEM
 
@@ -176,5 +176,45 @@ KADA KUCAS KREIRACE SE  CONTAINER, I SHELL C BITI OTVOREN UPRAVO U `usr/webapp` 
 /usr/webapp # ls
 Dockerfile         index.js           node_modules       package-lock.json  package.json
 /usr/webapp # 
+
+```
+
+MEDJUTIM TI NISI MORAO ZATVAATI CONTAINER DA BI OTVORIO CONTAINEROV SHELL
+
+TOGA CYU SE OPET PODSETITI
+
+# MEDJUTIM TI SI MOZDA ZABORAVIO DA TI MOZES DA EXECUTE-UJES COMMANDS ZA RUNNING CONTAINER
+
+DAKLE MOZES OTVORITI NOVI TERMINAL, I ONDA MOZES DA KUCAS SLEDECE
+
+OTKRIJES PRVO ID CONTEINER-A
+
+- `docker ps`
+
+```c
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS     NAMES
+0c134204a656   radebajic/webapp   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes             blissful_wilbur
+```
+
+- `docker exec -it 0c134204a656 sh`
+
+I USPESNO SAM OTVORIO SHELL ZA RUNNING CONTAINER
+
+```
+/usr/webapp # ls
+Dockerfile         index.js           node_modules       package-lock.json  package.json
+/usr/webapp # cat index.js 
+const express = require("express")
+
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send("Hello Staavros!")
+})
+
+app.listen(8080, () => {
+  console.log("app listening on: http://localhost:8080")
+})/usr/webapp # 
+
 
 ```
